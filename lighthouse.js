@@ -18,3 +18,16 @@ function totalCells() {
     let height = GRID.length;
     return width * height;
 }
+
+/**
+ * Return the contents of a specific cell
+ * @param {string} coordinates
+ * @returns {*}
+ */
+function lightCell(coordinates) {
+    let [letter,row] = coordinates.split('');
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    letter = ALPHABET.indexOf(letter.toUpperCase());
+    let col = getColumnNumber(letter);
+    return GRID[row - 1][col];
+  }

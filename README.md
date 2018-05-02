@@ -15,3 +15,7 @@ Write a function called gridSize() that will tell you the size of your grid in t
 ### Day 2
 
 Write a new function called totalCells() which will return the total number of cells in your grid.
+
+### Day 3
+
+Write a function called lightCell() that takes in the coordinates in the form of 'A3' or 'J9' and returns the contents of that specific cell.
