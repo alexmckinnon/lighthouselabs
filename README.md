@@ -19,3 +19,7 @@ Write a new function called totalCells() which will return the total number of c
 ### Day 3
 
 Write a function called lightCell() that takes in the coordinates in the form of 'A3' or 'J9' and returns the contents of that specific cell.
+
+### Day 4
+
+Write a function called isRock() which will take in a coordinate in the form of 'C7' and return a true or a false boolean value depending on whether there is a rock in that cell or not.

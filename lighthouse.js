@@ -30,4 +30,15 @@ function lightCell(coordinates) {
     letter = ALPHABET.indexOf(letter.toUpperCase());
     let col = getColumnNumber(letter);
     return GRID[row - 1][col];
-  }
+}
+
+/**
+ * Check if cell contains a rock
+ * Rock identified by '^'
+ * @param {string} coordinates
+ * @returns {boolean}
+ */
+function isRock(coordinates) {
+    let contents = lightCell(coordinates);
+    return (contents == '^');
+}
