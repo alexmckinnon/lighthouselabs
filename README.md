@@ -26,4 +26,8 @@ Write a function called isRock() which will take in a coordinate in the form of 
 
 ### Day 5
 
-Write a function called isCurrent() which will take in a coordinate in the form of 'A4' and return a true or a false boolean value depending on whether there is a strong current in that cell or not. 
+Write a function called isCurrent() which will take in a coordinate in the form of 'A4' and return a true or a false boolean value depending on whether there is a strong current in that cell or not.
+
+### Day 6
+
+Write a function named lightRow() that takes in the number of the row and returns the contents.

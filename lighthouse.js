@@ -53,3 +53,12 @@ function isCurrent(coordinates) {
     let contents = lightCell(coordinates);
     return (contents == '~');
 }
+
+/**
+ * Return the contents of the entire row
+ * @param {number} row
+ * @returns {Array}
+ */
+function lightRow(row) {
+    return GRID[row - 1];
+}
