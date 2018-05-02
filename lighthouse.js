@@ -42,3 +42,14 @@ function isRock(coordinates) {
     let contents = lightCell(coordinates);
     return (contents == '^');
 }
+
+/**
+ * Check if cell contains a strong current
+ * Strong current identified by '~'
+ * @param {string} coordinates
+ * @returns {boolean}
+ */
+function isCurrent(coordinates) {
+    let contents = lightCell(coordinates);
+    return (contents == '~');
+}

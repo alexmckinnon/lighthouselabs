@@ -23,3 +23,7 @@ Write a function called lightCell() that takes in the coordinates in the form of
 ### Day 4
 
 Write a function called isRock() which will take in a coordinate in the form of 'C7' and return a true or a false boolean value depending on whether there is a rock in that cell or not.
+
+### Day 5
+
+Write a function called isCurrent() which will take in a coordinate in the form of 'A4' and return a true or a false boolean value depending on whether there is a strong current in that cell or not. 
