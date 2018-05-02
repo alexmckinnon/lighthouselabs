@@ -11,3 +11,7 @@ Welcome to the Lighthouse Labs 21-Day Coding Challenge! Over the next 21 days yo
 ### Day 1
 
 Write a function called gridSize() that will tell you the size of your grid in the format width x height.
+
+### Day 2
+
+Write a new function called totalCells() which will return the total number of cells in your grid.
