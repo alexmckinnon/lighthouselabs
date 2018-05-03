@@ -52,3 +52,6 @@ Write a function called allRocks() which when called will return an array of the
 
 Write a function called allCurrents() which, when called, will return an array of the coordinates of all the strong currents in your grid.
 
+### Day 12
+
+Write a function called firstRock() which will return the coordinates of the first rock in your grid.
