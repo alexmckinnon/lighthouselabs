@@ -116,3 +116,38 @@ function isSafe(coordinates) {
     let contents = lightCell(coordinates);
     return (contents) ? false : true;
 }
+
+
+/**
+ * Return array of all rock coordinates
+ * @returns {Array}
+ */
+function allRocks() {
+
+    let cells = [];
+    let columns = [];
+    let rows = [];
+    let rocks = [];
+
+    for (let column of GRID[0].keys()) {
+        columns.push(getColumnLetter(column));
+    }
+
+    for (let row of GRID.keys()) {
+        rows.push((row + 1).toString());
+    }
+
+    for (let row of rows) {
+        for (let col of columns) {
+            cells.push(col + row);
+        }
+    }
+
+    for (let cell of cells) {
+        if (isRock(cell)) {
+            rocks.push(cell);
+        }
+    }
+
+    return rocks;
+}

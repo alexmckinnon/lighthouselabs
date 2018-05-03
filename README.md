@@ -43,3 +43,7 @@ Upgrade the lightCell() method so that if an invalid cell is passed in, it retur
 ### Day 9
 
 Write a function called isSafe() which will take in a coordinate in the form of 'H2' and return a true or a false boolean. The isSafe() function should check to see if there is a rock or current or not in that cell.
+
+### Day 10
+
+Write a function called allRocks() which when called will return an array of the coordinates of all the rocks in your grid.
