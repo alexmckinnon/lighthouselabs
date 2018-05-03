@@ -106,3 +106,13 @@ function lightColumn(letter) {
         return row[col];
     });
 }
+
+/**
+ * Check if cell is empty
+ * @param {string} coordinates
+ * @returns {boolean}
+ */
+function isSafe(coordinates) {
+    let contents = lightCell(coordinates);
+    return (contents) ? false : true;
+}

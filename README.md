@@ -39,3 +39,7 @@ Write a function called lightColumn() that takes in the letter of the column fro
 ### Day 8
 
 Upgrade the lightCell() method so that if an invalid cell is passed in, it returns false.
+
+### Day 9
+
+Write a function called isSafe() which will take in a coordinate in the form of 'H2' and return a true or a false boolean. The isSafe() function should check to see if there is a rock or current or not in that cell.
