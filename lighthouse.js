@@ -28,11 +28,24 @@ function totalCells() {
  * @returns {*}
  */
 function lightCell(coordinates) {
-    let [letter,row] = coordinates.split('');
-    let col = getColumnIndex(letter);
-    return GRID[row - 1][col];
-}
 
+    let letter = coordinates[0];
+    let row = coordinates.substr(1) - 1;
+
+    if (GRID[row] === undefined) {
+        return false;
+    }
+
+    let col = getColumnNumber(letter);
+    let result = GRID[row][col];
+
+    if (result === undefined) {
+        return false;
+    }
+
+    return result;
+
+}
 /**
  * Return the array index of the column from letter
  * @param {string} letter

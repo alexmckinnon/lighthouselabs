@@ -35,3 +35,7 @@ Write a function named lightRow() that takes in the number of the row and return
 ### Day 7
 
 Write a function called lightColumn() that takes in the letter of the column from the grid, and returns an array that is the contents of that grid column.
+
+### Day 8
+
+Upgrade the lightCell() method so that if an invalid cell is passed in, it returns false.
