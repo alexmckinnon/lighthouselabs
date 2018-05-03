@@ -36,7 +36,7 @@ function lightCell(coordinates) {
         return false;
     }
 
-    let col = getColumnNumber(letter);
+    let col = getColumnIndex(letter);
     let result = GRID[row][col];
 
     if (result === undefined) {
@@ -101,7 +101,7 @@ function lightRow(row) {
  * @returns {Array}
  */
 function lightColumn(letter) {
-    let col = getColumnNumber(letter);
+    let col = getColumnIndex(letter);
     return GRID.map(function(row) {
         return row[col];
     });
@@ -117,17 +117,15 @@ function isSafe(coordinates) {
     return (contents) ? false : true;
 }
 
-
 /**
- * Return array of all rock coordinates
+ * Return array of all cell coordinates
  * @returns {Array}
  */
-function allRocks() {
+function allCells() {
 
     let cells = [];
     let columns = [];
     let rows = [];
-    let rocks = [];
 
     for (let column of GRID[0].keys()) {
         columns.push(getColumnLetter(column));
@@ -143,6 +141,19 @@ function allRocks() {
         }
     }
 
+    return cells;
+
+}
+
+/**
+ * Return array of all rock coordinates
+ * @returns {Array}
+ */
+function allRocks() {
+
+    let cells = allCells();
+    let rocks = [];
+
     for (let cell of cells) {
         if (isRock(cell)) {
             rocks.push(cell);
@@ -150,4 +161,22 @@ function allRocks() {
     }
 
     return rocks;
+}
+
+/**
+ * Return array of all current coordinates
+ * @returns {Array}
+ */
+function allCurrents() {
+
+    let cells = allCells();
+    let currents = [];
+
+    for (let cell of cells) {
+        if (isCurrent(cell)) {
+            currents.push(cell);
+        }
+    }
+
+    return currents;
 }

@@ -47,3 +47,8 @@ Write a function called isSafe() which will take in a coordinate in the form of 
 ### Day 10
 
 Write a function called allRocks() which when called will return an array of the coordinates of all the rocks in your grid.
+
+### Day 11
+
+Write a function called allCurrents() which, when called, will return an array of the coordinates of all the strong currents in your grid.
+
