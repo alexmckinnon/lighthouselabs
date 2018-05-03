@@ -55,3 +55,7 @@ Write a function called allCurrents() which, when called, will return an array o
 ### Day 12
 
 Write a function called firstRock() which will return the coordinates of the first rock in your grid.
+
+### Day 13
+
+Write a function called firstCurrent() which will return the coordinates of the first current in your grid.

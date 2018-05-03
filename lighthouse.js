@@ -189,3 +189,12 @@ function firstRock() {
     let rocks = allRocks();
     return rocks[0];
 }
+
+/**
+ * Return the coordinates of the first current
+ * @returns {string}
+ */
+function firstCurrent() {
+    let currents = allCurrents();
+    return currents[0];
+}
