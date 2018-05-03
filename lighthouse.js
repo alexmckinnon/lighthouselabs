@@ -1,3 +1,6 @@
+/** @constant {string} */
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 /**
  * Returns the size of the grid
  * E.g. "10 x 10"
@@ -26,10 +29,26 @@ function totalCells() {
  */
 function lightCell(coordinates) {
     let [letter,row] = coordinates.split('');
-    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    letter = ALPHABET.indexOf(letter.toUpperCase());
-    let col = getColumnNumber(letter);
+    let col = getColumnIndex(letter);
     return GRID[row - 1][col];
+}
+
+/**
+ * Return the array index of the column from letter
+ * @param {string} letter
+ * @returns {number}
+ */
+function getColumnIndex(letter) {
+    return ALPHABET.indexOf(letter.toUpperCase());
+}
+
+/**
+ * Return the letter of the column from array index
+ * @param {number} index
+ * @returns {string}
+ */
+function getColumnLetter(index) {
+    return ALPHABET.charAt(index);
 }
 
 /**
@@ -61,4 +80,16 @@ function isCurrent(coordinates) {
  */
 function lightRow(row) {
     return GRID[row - 1];
+}
+
+/**
+ * Return the contents of the entire column
+ * @param {string} letter
+ * @returns {Array}
+ */
+function lightColumn(letter) {
+    let col = getColumnNumber(letter);
+    return GRID.map(function(row) {
+        return row[col];
+    });
 }

@@ -31,3 +31,7 @@ Write a function called isCurrent() which will take in a coordinate in the form 
 ### Day 6
 
 Write a function named lightRow() that takes in the number of the row and returns the contents.
+
+### Day 7
+
+Write a function called lightColumn() that takes in the letter of the column from the grid, and returns an array that is the contents of that grid column.
