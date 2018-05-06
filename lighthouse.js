@@ -345,3 +345,27 @@ function isDangerous(coordinates) {
     }
     return false;
 }
+
+/**
+ * Return an adjacent cell that is not dangerous
+ * @param {string} coordinates
+ * @returns {boolean}
+ */
+function distressBeacon(coordinates) {
+    let cellRight = getCellRight(coordinates);
+    if (cellRight && !isDangerous(cellRight)) {
+        return cellRight;
+    }
+    let cellBelow = getCellBelow(coordinates);
+    if (cellBelow && !isDangerous(cellBelow)) {
+        return cellBelow;
+    }
+    let cellLeft = getCellLeft(coordinates);
+    if (cellLeft && !isDangerous(cellLeft)) {
+        return cellLeft;
+    }
+    let cellAbove = getCellAbove(coordinates);
+    if (cellAbove && !isDangerous(cellAbove)) {
+        return cellAbove;
+    }
+}

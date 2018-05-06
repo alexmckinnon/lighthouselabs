@@ -63,3 +63,7 @@ Write a function called firstCurrent() which will return the coordinates of the 
 ### Day 14
 
 Write a function called isDangerous() that will take a cell in the format 'G7' and check if there is a rock or a strong current in it, OR in the cells immediately above, below, left, or right of it.
+
+### Day 15
+
+Write a function called distressBeacon() that takes a coordinate in the format 'H2' and returns a different coordinate in the same format.
