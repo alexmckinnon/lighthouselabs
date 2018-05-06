@@ -59,3 +59,7 @@ Write a function called firstRock() which will return the coordinates of the fir
 ### Day 13
 
 Write a function called firstCurrent() which will return the coordinates of the first current in your grid.
+
+### Day 14
+
+Write a function called isDangerous() that will take a cell in the format 'G7' and check if there is a rock or a strong current in it, OR in the cells immediately above, below, left, or right of it.

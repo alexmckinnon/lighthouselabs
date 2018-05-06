@@ -23,6 +23,49 @@ function totalCells() {
 }
 
 /**
+ * Return the row number from given coordinates
+ * @returns {number}
+ */
+function getRow(coordinates) {
+    return parseInt(coordinates.substr(1));
+}
+
+/**
+ * Return the column letter from given coordinates
+ * @param {string} coordinates
+ * @returns {string}
+ */
+function getColumn(coordinates) {
+    return coordinates[0];
+}
+
+/**
+ * Get the previous letter in the alphabet
+ * @param {string} letter
+ * @returns {string}
+ */
+function getPreviousLetter(letter) {
+    let index = getColumnIndex(letter) - 1;
+    if (index < 0) {
+        return false;
+    }
+    return getColumnLetter(index);
+}
+
+/**
+ * Get the next letter in the alphabet
+ * @param {string} letter
+ * @returns {string}
+ */
+function getNextLetter(letter) {
+    let index = getColumnIndex(letter) + 1;
+    if (index < 0) {
+        return false;
+    }
+    return getColumnLetter(index);
+}
+
+/**
  * Return the contents of a specific cell
  * @param {string} coordinates
  * @returns {*}
@@ -197,4 +240,108 @@ function firstRock() {
 function firstCurrent() {
     let currents = allCurrents();
     return currents[0];
+}
+
+/**
+ * Return the cell directly above given coordinates
+ * @param {string} coordinates
+ * @returns {string|bool}
+ */
+function getCellAbove(coordinates) {
+    let row = getRow(coordinates);
+    let letter = getColumn(coordinates);
+    let cell = letter + (row - 1).toString();
+
+    if (allCells().includes(cell)) {
+        return cell;
+    }
+
+    return false;
+}
+
+/**
+ * Return the cell directly below given coordinates
+ * @param {string} coordinates
+ * @returns {string|bool}
+ */
+function getCellBelow(coordinates) {
+    let row = getRow(coordinates);
+    let letter = getColumn(coordinates);
+    let cell = letter + (row + 1).toString();
+
+    if (allCells().includes(cell)) {
+        return cell;
+    }
+
+    return false;
+}
+
+/**
+ * Return the cell to the left of given coordinates
+ * @param {string} coordinates
+ * @returns {string|bool}
+ */
+function getCellLeft(coordinates) {
+    let row = getRow(coordinates);
+    let letter = getColumn(coordinates);
+    let prevLetter = getPreviousLetter(letter);
+    if (!prevLetter) {
+        return false;
+    }
+    let cell = prevLetter + row.toString();
+
+    if (allCells().includes(cell)) {
+        return cell;
+    }
+
+    return false;
+}
+
+/**
+ * Return the cell to the right of given coordinates
+ * @param {string} coordinates
+ * @returns {string|bool}
+ */
+function getCellRight(coordinates) {
+    let row = getRow(coordinates);
+    let letter = getColumn(coordinates);
+    let nextLetter = getNextLetter(letter);
+    if (!nextLetter) {
+        return false;
+    }
+    let cell = nextLetter + row.toString();
+
+    if (allCells().includes(cell)) {
+        return cell;
+    }
+
+    return false;
+}
+
+/**
+ * Check if cell or surrounding cells contain a rock or current.
+ * @param {string} coordinates
+ * @returns {boolean}
+ */
+function isDangerous(coordinates) {
+    if (!isSafe(coordinates)) {
+        return true;
+    }
+    let cellAbove = getCellAbove(coordinates);
+    if (cellAbove && !isSafe(cellAbove)) {
+        return true;
+    }
+    let cellBelow = getCellBelow(coordinates);
+    if (cellBelow && !isSafe(cellBelow)) {
+        return true;
+    }
+    let cellLeft = getCellLeft(coordinates);
+    if (cellLeft && !isSafe(cellLeft)) {
+        return true;
+    }
+    let cellRight = getCellRight(coordinates);
+    if (cellRight && !isSafe(cellRight)) {
+        return true;
+    }
+    return false;
 }
