@@ -369,3 +369,18 @@ function distressBeacon(coordinates) {
         return cellAbove;
     }
 }
+
+/**
+ * Add a rock to the grid at the given coordinates
+ * @param {string} coordinates
+ * @param {string} value
+ */
+function updateCell(coordinates, value) {
+    let letter = getColumn(coordinates);
+    let row = getRow(coordinates) - 1;
+    let col = getColumnIndex(letter);
+    GRID[row][col] = value;
+}
+
+/** Add a rock to J9 */
+updateCell("J9", "^");

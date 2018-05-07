@@ -67,3 +67,7 @@ Write a function called isDangerous() that will take a cell in the format 'G7' a
 ### Day 15
 
 Write a function called distressBeacon() that takes a coordinate in the format 'H2' and returns a different coordinate in the same format.
+
+### Day 16
+
+Add a rock to your grid in cell J9.
