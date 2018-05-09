@@ -384,3 +384,18 @@ function updateCell(coordinates, value) {
 
 /** Add a rock to J9 */
 updateCell("J9", "^");
+
+/**
+ * Return the percentages of rocks and strong currents in the grid.
+ * @returns {Array}
+ */
+function percentageReport() {
+    let cells = allCells().length;
+    let rocks = allRocks().length;
+    let currents = allCurrents().length;
+
+    return [
+        Math.round(rocks / cells * 10000) / 100,
+        Math.round(currents / cells * 10000) / 100
+    ];
+}
