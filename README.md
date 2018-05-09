@@ -75,3 +75,7 @@ Add a rock to your grid in cell J9.
 ### Day 17
 
 Write a function percentageReport() that returns what percentage of your grid is rocks and what percentage has strong currents. This data should be sent as an array of two values, in that order.
+
+### Day 18
+
+Update percentageReport() to send back three values. The first should be the number of open water cells, the second should be the number of rock cells, and the third should be the number of strong current cells.

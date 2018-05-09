@@ -225,6 +225,24 @@ function allCurrents() {
 }
 
 /**
+ * Return array of all open water coordinates
+ * @returns {Array}
+ */
+function allOpenWater() {
+
+    let cells = allCells();
+    let water = [];
+
+    for (let cell of cells) {
+        if (isSafe(cell)) {
+            water.push(cell);
+        }
+    }
+
+    return water;
+}
+
+/**
  * Return the coordinates of the first rock
  * @returns {string}
  */
@@ -386,16 +404,13 @@ function updateCell(coordinates, value) {
 updateCell("J9", "^");
 
 /**
- * Return the percentages of rocks and strong currents in the grid.
+ * Return count of open water, rocks, and strong currents in the grid.
  * @returns {Array}
  */
 function percentageReport() {
-    let cells = allCells().length;
+    let water = allOpenWater().length;
     let rocks = allRocks().length;
     let currents = allCurrents().length;
 
-    return [
-        Math.round(rocks / cells * 10000) / 100,
-        Math.round(currents / cells * 10000) / 100
-    ];
+    return [water, rocks, currents];
 }
