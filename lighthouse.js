@@ -230,16 +230,12 @@ function allCurrents() {
  */
 function allOpenWater() {
 
-    let cells = allCells();
-    let water = [];
-
-    for (let cell of cells) {
+    return allCells().reduce(function(total, cell) {
         if (isSafe(cell)) {
-            water.push(cell);
+            total.push(cell);
         }
-    }
-
-    return water;
+        return total;
+    }, [])
 }
 
 /**
@@ -413,4 +409,18 @@ function percentageReport() {
     let currents = allCurrents().length;
 
     return [water, rocks, currents];
+}
+
+/**
+ * Return percentage of safe (open water) cells in the grid
+ * Response string format of "##%"
+ * @returns {string}
+ */
+function safetyReport() {
+
+    let cells = allCells();
+    let water = allOpenWater();
+    let percent = Math.round(water.length / cells.length * 1000) / 10;
+
+    return percent.toString() + '%';
 }

@@ -79,3 +79,7 @@ Write a function percentageReport() that returns what percentage of your grid is
 ### Day 18
 
 Update percentageReport() to send back three values. The first should be the number of open water cells, the second should be the number of rock cells, and the third should be the number of strong current cells.
+
+### Day 19
+
+ Write another function called safetyReport(), which returns the percentage of your grid that contains calm waters - you must use the reduce() function in your code. The return value should be a string in the form "##%". If there are any decimals, it should be rounded to 1 decimal point.
