@@ -83,3 +83,7 @@ Update percentageReport() to send back three values. The first should be the num
 ### Day 19
 
  Write another function called safetyReport(), which returns the percentage of your grid that contains calm waters - you must use the reduce() function in your code. The return value should be a string in the form "##%". If there are any decimals, it should be rounded to 1 decimal point.
+
+### Day 20
+
+Write a function called calcDistance() which will take two coordinates in the form of 'A3' and calculate the distance between the two points.

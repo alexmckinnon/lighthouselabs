@@ -424,3 +424,23 @@ function safetyReport() {
 
     return percent.toString() + '%';
 }
+
+/**
+ * Return the distance between two coordinates
+ * Formula for distance is sqrt((x2 - x1)^2 + (y2 - y1)^2)
+ * @param {string} c1
+ * @param {string} c2
+ * @returns {number}
+ */
+function calcDistance(c1, c2) {
+
+    let x1 = getColumnIndex(getColumn(c1));
+    let x2 = getColumnIndex(getColumn(c2));
+    let y1 = getRow(c1);
+    let y2 = getRow(c2);
+
+    let distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+    return Math.round(distance * 100) / 100;
+
+}
