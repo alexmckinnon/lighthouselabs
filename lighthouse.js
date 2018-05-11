@@ -444,3 +444,33 @@ function calcDistance(c1, c2) {
     return Math.round(distance * 100) / 100;
 
 }
+
+/**
+ * Check that all cells are safe to travel through
+ * Requirements: no cells have rocks and no more than 2 cells have currents
+ * @param {Array} cells
+ * @returns {boolean}
+ */
+function evaluateRoute(cells) {
+
+    if (!Array.isArray(cells)) {
+        return false
+    }
+
+    let currents = [];
+
+    for (let i in cells) {
+        if (isRock(cells[i])) {
+            return false;
+        }
+        if (isCurrent(cells[i])) {
+            currents.push(cells[i]);
+        }
+    }
+
+    if (currents.length > 2) {
+        return false;
+    }
+
+    return true;
+}

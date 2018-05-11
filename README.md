@@ -87,3 +87,11 @@ Update percentageReport() to send back three values. The first should be the num
 ### Day 20
 
 Write a function called calcDistance() which will take two coordinates in the form of 'A3' and calculate the distance between the two points.
+
+### Day 21
+
+Write a function evaluateRoute() which will take an array of cells in the form: ["A1", "B2", "C3", "D4"] (there could be any number of cells), and return a boolean true or false according to the following rules:
+
+- If any cells have rocks, it should return false.
+- If more than two cells have strong currents, it should return false.
+- Otherwise, it should return true.
